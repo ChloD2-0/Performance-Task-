@@ -13,21 +13,21 @@
 
 
 # flashcard(x,y)
-flashcards = 
-    {
-    "Term":,
-    "Meaning":,
-    "Level" :
-}
+# flashcards = 
+#     {
+#         "Term":,
+#             "Meaning":,
+#                 "Level" :
+#                 }
 
-def create_card():
-    input("Create new flashcard?🤔 (y/n)")
-    if == "y":
-        input("Enter term: ")
-        input("Meaning:  ")
-        input("Difficulty level: ")
+#                 def create_card():
+#                     input("Create new flashcard?🤔 (y/n)")
+#                         if == "y":
+#                                 input("Enter term: ")
+#                                         input("Meaning:  ")
+#                                                 input("Difficulty level: ")
 
-create_card()
+#                                                 create_card()
 
-   
-
+                                                   
+                                                   
