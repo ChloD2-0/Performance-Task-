@@ -13,7 +13,8 @@ def menu():
                 while go:
                     question = input("Enter new question or type 'Q' to end: ")
                     if question == "Q":
-                        break
+                        print("")
+                        menu()
                     else:
                         answer = input("Enter new answer: ")
                         flashcard_dict[question] = answer
