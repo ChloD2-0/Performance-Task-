@@ -1,17 +1,12 @@
 list_functions = []
-def menu(): 
-    options = input("Main Menu:\n 1. Create New Flashcard\n 2. Study\n 3. Delete Flashcard\nChoose a number: ")
-    while options:
-        if options == "1":
-            def create_cards(): 
-                # print("Before studying, create some new flashcards.")
+def create_cards(): 
                 flashcard_dict = {}
 
                 go = "start"
 
                 while go:
                     question = input("Enter new question or type 'Q' to end: ")
-                    if question == "Q":
+                    if question.upper == "Q":
                         break
                         print("")
                         menu()
@@ -20,8 +15,13 @@ def menu():
                         flashcard_dict[question] = answer
                         print("New flashcard created")
                         return flashcard_dict
-                    create_cards()
-                    break
+def menu(): 
+    options = input("Main Menu:\n 1. Create New Flashcard\n 2. Study\n 3. Delete Flashcard\nChoose a number: ")
+    while options:
+        if options == "1":
+            new = create_cards()
+            flashcard_dict.update(new)
+            break
         elif options == "2":
             def study(dictionary):
                 flashcards = dictionary 
@@ -35,6 +35,11 @@ def menu():
                 correct = input("Did you get it right? (y/n): ")
                 if correct == "y":
                      right += 1
+                else:
+                    cards_missed[i] = flashcards[i]
+                    # if cards_missed
+            study(create_cards())
+            break
 
         elif options == "3":
             return options
@@ -46,7 +51,8 @@ menu()
 
 
 def want_another():
-            answer = input("Do you want to see the menu again (yes or no): ")
-            if answer == "yes":
-                list_functions[0]
+            answer = input("Do you want to see the menu again (y/n): ")
+            if answer == "y":
+                menu()
 
+want_another()
