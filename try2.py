@@ -1,7 +1,6 @@
 list_functions = []
 def menu(): 
     options = input("Main Menu:\n 1. Create New Flashcard\n 2. Study\n 3. Delete Flashcard\nChoose a number: ")
-   
     while options:
         if options == "1":
             def create_cards(): 
@@ -13,6 +12,7 @@ def menu():
                 while go:
                     question = input("Enter new question or type 'Q' to end: ")
                     if question == "Q":
+                        break
                         print("")
                         menu()
                     else:
@@ -20,31 +20,33 @@ def menu():
                         flashcard_dict[question] = answer
                         print("New flashcard created")
                         return flashcard_dict
-            list_functions.append(create_cards())
-            break
-        
+                    create_cards()
+                    break
         elif options == "2":
-             for i,(question, answer) in enumerate
-            # def study(dictionary):
-            #     flashcards = dictionary 
-            #     length = len(flashcards)
-            #     cards_missed = {}
-            #     correct = 0
-            #     for card in flashcards:
-            #         print(card)
-            #         input("")
-            #         print(flashcards[card])  
+            def study(dictionary):
+                flashcards = dictionary 
+                length = len(flashcards)
+                cards_missed = {}
+                correct = 0
+                for i in flashcards:
+                    print(i)
+                    input("")
+                    print(flashcards[i])  
+                correct = input("Did you get it right? (y/n): ")
+                if correct == "y":
+                     right += 1
 
         elif options == "3":
-            # return options
-            # answer = input("Do you want to see the menu again (yes or no): ")
-            # if answer == "yes":
-            #     list_functions[1]
+            return options
+            # answer = input("Do you want to see the menu again (y/n): ")
+            # if answer == "y":
+            #     list_functions[0]
             
-            
+menu()
 
 
 def want_another():
             answer = input("Do you want to see the menu again (yes or no): ")
             if answer == "yes":
-                list_functions[1]
+                list_functions[0]
+
