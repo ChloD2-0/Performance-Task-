@@ -48,9 +48,3 @@ def menu():
 menu()
 
 
-def want_another():
-            answer = input("Do you want to see the menu again (y/n): ")
-            if answer == "y":
-                menu()
-
-want_another()

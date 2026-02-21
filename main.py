@@ -36,36 +36,30 @@ def menu():
     while True:
         options = input("Main Menu:\n 1. Create New Flashcard\n 2. Study\n 3. View Scores\n 4. Quit\nChoose a number: ")
         if options == "1":
-            print("")
-            create_cards()
+                print("")
+                create_cards()
         elif options == "2":
-            print("")
-            study(flashcards)
+                print("")
+                study(flashcards)
 
         elif options =="3":
             
-             print(f"Scores: {scores}")
-            #  if not scores:
-            #       print("")
-            #       print("Scores: None")
-            #       print("")
-            #  else:
-            #     print(f"Scores: {scores}")
-             
+                print(f"Scores: {scores}")
+        
         elif options == "4":
-            print("")
-            print("See you next time!👋")
-            break
+                print("")
+                print("See you next time!👋")
+                break
         
         else: 
-            print("")
-            print("Please choose 1, 2, 3, or 4")
-            print("")
+                print("")
+                print("Please choose 1, 2, 3, or 4") 
+                print("")
         
 def create_cards(): 
     while True:
         q = input("Enter new question or type 'Q' to end: ")
-        if q.upper() == "Q":
+        if q.upper().strip() == "Q":
             print("")
             break
         else:
