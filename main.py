@@ -43,20 +43,24 @@ def menu():
             study(flashcards)
 
         elif options =="3":
-             if not scores:
-                  print("")
-                  print("Scores: None")
-                  print("")
-             else:
-                print(f"Scores: {scores}")
+            
+             print(f"Scores: {scores}")
+            #  if not scores:
+            #       print("")
+            #       print("Scores: None")
+            #       print("")
+            #  else:
+            #     print(f"Scores: {scores}")
              
         elif options == "4":
             print("")
             print("See you next time!👋")
             break
         
-        else:
-              print("Please choose 1, 2, 3, or 4")
+        else: 
+            print("")
+            print("Please choose 1, 2, 3, or 4")
+            print("")
         
 def create_cards(): 
     while True:
@@ -72,20 +76,27 @@ def create_cards():
     
 
 def study(flashcards):
-                flashcards = len(flashcards)
+                if not flashcards:
+                     print("No flashcards created")
+                     print("")
+                     return
                 cards_missed = {}
                 correct = 0
-                for i in flashcards:
-                    print(i)
-                    input("")
-                    print(flashcards[i])  
-                correct = input("Did you get it right?🤔 (y/n): ")
-                if correct == "y":
-                     right += 1
+                for questions in flashcards:
+                    print(f"Question: {questions}")
+                    input("Answer: ")
+                    print(f"Correct answer: {flashcards[questions]}")  
+                    result = input("Did you get it right?🤔 (y/n): ")
+                    print("")
+                if result == "y":
+                     correct += 1
                 else:
-                     cards_missed[i] = flashcards[i]
-                     print(f"You got {correct} out of {flashcards} correct!")
-                     scores.append(correct)
+                     cards_missed[questions] = flashcards[questions]
+                num_of_flashcards = len(flashcards)
+                grade = (correct / num_of_flashcards) * 100
+                print(f"You got {correct} out of {len(flashcards)} correct!")
+                print(f"You scored a {grade}%\n")
+                scores.append(grade)
 
             
 menu()
