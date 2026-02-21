@@ -38,13 +38,12 @@ def menu():
         if options == "1":
             print("")
             create_cards()
+
         elif options == "2":
             print("")
             study(flashcards)
-
         elif options =="3":
-            
-             print(f"Scores: {scores}")
+            print(f"Scores: {scores}")
             #  if not scores:
             #       print("")
             #       print("Scores: None")
@@ -56,7 +55,6 @@ def menu():
             print("")
             print("See you next time!👋")
             break
-        
         else: 
             print("")
             print("Please choose 1, 2, 3, or 4")
