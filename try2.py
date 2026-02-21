@@ -1,26 +1,25 @@
 list_functions = []
-def create_cards(): 
-                flashcard_dict = {}
-
-                go = "start"
-
-                while go:
-                    question = input("Enter new question or type 'Q' to end: ")
-                    if question.upper == "Q":
-                        break
-                        print("")
-                        menu()
-                    else:
-                        answer = input("Enter new answer: ")
-                        flashcard_dict[question] = answer
-                        print("New flashcard created")
-                        return flashcard_dict
 def menu(): 
     options = input("Main Menu:\n 1. Create New Flashcard\n 2. Study\n 3. Delete Flashcard\nChoose a number: ")
     while options:
         if options == "1":
-            new = create_cards()
-            flashcard_dict.update(new)
+            def create_cards(): 
+                # print("Before studying, create some new flashcards.")
+                flashcards= {}
+
+                go = "start"
+
+                while go:
+                    q = input("Enter new question or type 'Q' to end: ")
+                    if q.upper() == "Q":
+                        break
+                        print("")
+                        menu()
+                    else:
+                        a = input("Enter new answer: ")
+                        flashcards[q] = a
+                        print("Flashcard added!\n")
+            create_cards()
             break
         elif options == "2":
             def study(dictionary):
@@ -32,12 +31,11 @@ def menu():
                     print(i)
                     input("")
                     print(flashcards[i])  
-                correct = input("Did you get it right? (y/n): ")
+                correct = input("Did you get it right?🤔 (y/n): ")
                 if correct == "y":
                      right += 1
                 else:
-                    cards_missed[i] = flashcards[i]
-                    # if cards_missed
+                     cards_missed[i] = flashcards[i]
             study(create_cards())
             break
 
