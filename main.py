@@ -79,63 +79,63 @@
 # menu()
 #---------------------- Try 2 ^
 
-flashcards = {}
-scores = []
-def menu(): 
-    while True:
-        options = input("Main Menu:\n 1. Create New Flashcard\n 2. Study\n 3. View Scores\n 4. Quit\nChoose a number: ")
-        if options.strip() == "1":
-            print("")
-            create_cards()
-        elif options.strip() == "2":
-            print("")
-            study(flashcards)
+# flashcards = {}
+# scores = []
+# def menu(): 
+#     while True:
+#         options = input("Main Menu:\n 1. Create New Flashcard\n 2. Study\n 3. View Scores\n 4. Quit\nChoose a number: ")
+#         if options.strip() == "1":
+#             print("")
+#             create_cards()
+#         elif options.strip() == "2":
+#             print("")
+#             study(flashcards)
 
-        elif options.strip() =="3":
-            print(f"Scores: {scores}")
+#         elif options.strip() =="3":
+#             print(f"Scores: {scores}")
         
-        elif options.strip() == "4":
-            print("")
-            print("See you next time!")
-            break
-        else: 
-            print("")
-            print("Please choose 1, 2, 3, or 4") 
-            print("")
-def create_cards(): 
-    while True:
-        q = input("Enter new question or type 'Q' to end: ")
-        if q.upper().strip() == "Q":
-            print("")
-            break
-        else:
-            a = input("Enter new answer: ")
-            flashcards[q] = a
-            print("New flashcard created!\n")
-def study(flashcards):
-    if not flashcards:
-        print("No flashcards created")
-        print("")
-        return
-    cards_missed = {}
-    correct = 0
-    for questions in flashcards:
-        print(f"Question: {questions}")
-        input("Answer: ")
-        print(f"Correct answer: {flashcards[questions]}")  
-        result = input("Did you get it right? (y/n): ")
-        print("")
-        if result == "y":
-            correct += 1
-        else:
-            cards_missed[questions] = flashcards[questions]
-        num_of_flashcards = len(flashcards)
-        grade = (correct / num_of_flashcards) * 100
-    print(f"You got {correct} out of {len(flashcards)} correct!")
-    print(f"You scored a {grade}%\n")
-    scores.append(grade)
+#         elif options.strip() == "4":
+#             print("")
+#             print("See you next time!")
+#             break
+#         else: 
+#             print("")
+#             print("Please choose 1, 2, 3, or 4") 
+#             print("")
+# def create_cards(): 
+#     while True:
+#         q = input("Enter new question or type 'Q' to end: ")
+#         if q.upper().strip() == "Q":
+#             print("")
+#             break
+#         else:
+#             a = input("Enter new answer: ")
+#             flashcards[q] = a
+#             print("New flashcard created!\n")
+# def study(flashcards):
+#     if not flashcards:
+#         print("No flashcards created")
+#         print("")
+#         return
+#     cards_missed = {}
+#     correct = 0
+#     for questions in flashcards:
+#         print(f"Question: {questions}")
+#         input("Answer: ")
+#         print(f"Correct answer: {flashcards[questions]}")  
+#         result = input("Did you get it right? (y/n): ")
+#         print("")
+#         if result == "y":
+#             correct += 1
+#         else:
+#             cards_missed[questions] = flashcards[questions]
+#         num_of_flashcards = len(flashcards)
+#         grade = (correct / num_of_flashcards) * 100
+#     print(f"You got {correct} out of {len(flashcards)} correct!")
+#     print(f"You scored a {grade}%\n")
+#     scores.append(grade)
 
-menu()
+# menu()
 
 
 # def want_another():
